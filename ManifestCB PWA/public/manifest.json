@@ -1,0 +1,50 @@
+{
+    "name": "Manifest CookBook",
+    "short_name": "Manifest CookBook",
+    "icons": [
+        {
+            "src": "",
+            "type": "image/",
+            "sizes": "48x48"
+        },
+        {
+            "src": "",
+            "type": "image/",
+            "sizes": "96x96"
+        },
+        {
+            "src":"",
+            "type":"image/",
+            "sizes":"144x144"
+        },
+        {
+            "src":"",
+            "type":"image/",
+            "sizes":"192x192"
+        },
+        {
+            "src":"",
+            "type":"image/",
+            "sizes":"256x256"
+        },
+        {
+            "src":"",
+            "type":"image/",
+            "sizes":"384x384"
+        },
+        {
+            "src":"",
+            "type":"image/",
+            "sizes":"512x512"
+        }
+    ],
+    "start_url":"/index.html",
+    "scope":".",
+    "display":"standalone",
+    "orientation":"portrait-primary",
+    "background_color":"",
+    "theme_color":"",
+    "description":"A Simple Manifest CookBook, implementing a lot of PWA love.",
+    "dir":"ltr",
+    "lang":"en-US"
+}
