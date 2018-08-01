@@ -1,0 +1,54 @@
+nav .nav-wrapper{
+    position:relative;height:100%
+}
+.navbar-fixed{
+    position:relative;
+    height:56px;
+    z-index:997
+}
+.navbar-fixed nav{
+    position:fixed
+}
+@media only screen and (min-width: 601px){
+    nav.nav-extended .nav-wrapper{
+        min-height:64px
+    }
+    nav,nav .nav-wrapper i,nav a.button-collapse,nav a.button-collapse i{
+        height:64px;
+        line-height:64px
+    }
+    .navbar-fixed{
+        height:64px
+    }
+}
+#sidenav-overlay{
+    z-index: 0;
+}
+@media only screen and (min-width: 993px){
+    nav a.button-collapse{
+        display: inline;
+    }
+}
+body{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+main{
+    flex: 1 0 auto;
+}
+.RED{
+    color:#d0021b;
+}
+.REDbtn{
+    background-color:#d0021b;
+}
+.likeQuote{
+    margin: 20px 0;
+    padding-left: 1.5rem;
+    border-left: 5px solid #ee6e73;
+}
+nav li:hover {
+    color:white;
+    background-color: #65b6fd;
+}

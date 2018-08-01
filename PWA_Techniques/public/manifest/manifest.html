@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Manifest.json</title>
+    <!--MATERIALIZE ICONS CDN-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--MATERIALIZE CSS CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" media="screen">
+    <!--CUSTOM CSS-->
+    <link href="../src/app.css" rel="stylesheet">
+    <!--MANIFEST.JSON-->
+    <link rel="manifest" href="/manifest.json">
+    <!--FAVICON-->
+    <link rel="shortcut icon" href="../images/icons/favicon.ico" type="image/x-icon">
+    <!--THEME-COLOR-->
+    <meta name="theme-color" content="#1e88e5">
+</head>
+<body class="grey lighten-5">
+    <!--NAVBAR-->
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper blue darken-1">
+                <a href="#!" class="brand-logo hide-on-med-and-up" style="font-size: 4vmin">Manifest.json</a>
+                <a href="#!" class="brand-logo hide-on-small-only center" style="font-size: 4vmin">Manifest.json</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse">
+                    <i class="material-icons">menu</i>
+                </a>
+                <!--SIDENAV-->
+                <ul class="side-nav" id="mobile-demo">
+                    <li>
+                        <a href="/index.html" class="btn-flat">
+                        <i class="material-icons left">home</i> Home</a>
+                    </li>
+                    <li>
+                        <a href="/swcb/swcb.html" class="btn-flat"><i class="material-icons left">settings_applications</i>Service Worker</a>
+                    </li>
+                    <li>
+                        <a href="#introduction" onclick="$('.button-collapse').sideNav('hide');">Introduction to Manifest</a>
+                    </li>
+                    <li>
+                        <a href="#createTheManifest" onclick="$('.button-collapse').sideNav('hide');">Create the Manifest</a>
+                    </li>
+                    <li>
+                         <a href="#manifestProperties" onclick="$('.button-collapse').sideNav('hide');">Manifest.json properties</a>
+                    </li>
+                    <li>
+                        <a href="#splashScreens" onclick="$('.button-collapse').sideNav('hide');">Splash Screen</a>
+                    </li>
+                    <li> <a href="#about" onclick="$('.button-collapse').sideNav('hide');">About</a> </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!--MAIN CONTAINER-->
+    <div class="container white">
+        <!--A2HS CUSTOM PROMPT BUTTON-->
+        <div class="fixed-action-btn" id="a2hsBtn" title="Add to Home Screen">
+            <a class="btn-floating btn-large waves-effect REDbtn z-depth-5">
+                <i class="large material-icons">add_to_home_screen</i>
+            </a>
+        </div>
+        <!--INTRODUCTION TO MANIFEST-->
+        <div id="introduction" class="section scrollspy">
+            <p class="flow-text likeQuote" style="font-weight: 500">Introduction to Manifest.json</p>
+            <p class="grey-text text-darken-4 flow-text">The web app manifest provides information about an application (such as its name, author, icon, and description) in a JSON text file. The manifest informs details for websites installed on the homescreen of a device, providing users with quicker access and a richer experience.</p>
+            <p class="grey-text text-darken-4 flow-text">Web app manifests are part of a collection of web technologies called progressive web apps, which are websites that can be installed to a device’s homescreen without an app store, along with other capabilities like working offline and receiving push notifications.</p>
+        </div>
+<!--CREATE THE MANIFEST-->
+<div id="createTheManifest" class="section scrollspy">
+    <p class="flow-text likeQuote" style="font-weight: 500">Create the Manifest</p>
+    <p class="grey-text text-darken-4 flow-text">A complete manifest.json file for a progressive web app.</p>
+    <ul class="collapsible popout">
+        <li>
+            <div class="collapsible-header light-blue lighten-5 light-blue-text text-darken-1 hoverable"> <i class="material-icons">add_circle</i>CODE:</div>
+            <div class="collapsible-body black white-text">
+                <span>
+                    <code>
+                        <pre>{
+"short_name": "Maps",
+"name": "Google Maps",
+"icons": [
+    {
+    "src": "/images/icons-192.png",
+    "type": "image/png",
+    "sizes": "192x192"
+    },
+    {
+    "src": "/images/icons-512.png",
+    "type": "image/png",
+    "sizes": "512x512"
+    }
+],
+"start_url": "/maps/?source=pwa",
+"background_color": "#3367D6",
+"display": "standalone",
+"scope": "/maps/",
+"theme_color": "#3367D6"
+}</pre>
+                    </code>
+                </span>
+            </div>
+        </li>
+    </ul>
+</div>
+<div id="deployingAManifest" class="section scrollspy">
+    <p class="flow-text likeQuote" style="font-weight: 500">Deploying a Manifest</p>
+    <p class="grey-text text-darken-4 flow-text">When you have created the manifest add a link tag to all the pages that encompass your web app:</p>
+    <ul class="collapsible popout">
+        <li>
+            <div class="collapsible-header light-blue lighten-5 light-blue-text text-darken-1 hoverable"> <i class="material-icons">add_circle</i>CODE:</div>
+            <div class="collapsible-body black white-text">
+                <span>
+                    <code>
+                        <pre>&lt;link rel="manifest" href="/manifest.json"&gt;</pre>
+                    </code>
+                </span>
+            </div>
+        </li>
+    </ul>
+</div>
+<!--MANIFEST PROPERTIES-->
+<div id="manifestProperties" class="section scrollspy">
+    <p class="flow-text likeQuote" style="font-weight: 600">Manifest.json properties</p>
+    <!--SHORT_NAME & NAME-->
+    <p class="flow-text likeQuote" style="font-weight: 450">short_name and name</p>
+    <p class="grey-text text-darken-4 flow-text">You must provide at least the short_name or name property. If both are provided, short_name is used on the user's home screen, launcher, or other places where space may be limited. name is used on the app install prompt.</p>
+    <ul class="collapsible popout">
+        <li>
+            <div class="collapsible-header light-blue lighten-5 light-blue-text text-darken-1 hoverable"> <i class="material-icons">add_circle</i>CODE:</div>
+            <div class="collapsible-body black white-text">
+                <span>
+                    <code><pre>
+"short_name": "Maps",
+"name": "Google Maps"</pre>
+                    </code>
+                </span>
+            </div>
+        </li>
+    </ul>
+    <!--icons-->
+    <p class="flow-text likeQuote" style="font-weight: 450">icons</p>
+    <p class="grey-text text-darken-4 flow-text">When a user adds your site to their home screen, you can define a set of icons for the browser to use. These icons are used in places like the home screen, app launcher, task switcher, splash screen, etc.</p>
+    <p class="grey-text text-darken-4 flow-text">icons is an array of image objects, each object should include the src, a sizes property, and the type of image.</p>
+    <ul class="collapsible popout">
+        <li>
+            <div class="collapsible-header light-blue lighten-5 light-blue-text text-darken-1 hoverable"> <i class="material-icons">add_circle</i>CODE:</div>
+            <div class="collapsible-body black white-text">
+                <span>
+                    <code><pre>
+"icons": [
+{
+    "src": "/images/icons-192.png",
+    "type": "image/png",
+    "sizes": "192x192"
+},
+{
+    "src": "/images/icons-512.png",
+    "type": "image/png",
+    "sizes": "512x512"
+}
+]</pre>
+                    </code>
+                </span>
+            </div>
+        </li>
+    </ul>
+    <ul class="collapsible popout">
+        <li>
+            <div class="collapsible-header light-blue lighten-5 light-blue-text text-darken-1 hoverable"> <i class="material-icons">add_circle</i>Note:</div>
+            <div class="collapsible-body">
+                <span>include a 192x192 pixel icon and a 512x512 pixel icon. Chrome will automatically scale the icon for the device. If you'd prefer to scale your own icons and adjust them for pixel-perfection, provide icons in increments of 48dp.</span>
+            </div>
+        </li>
+    </ul>
+    <!--START_URL-->
+    <p class="flow-text likeQuote" style="font-weight: 450">start_url</p>
+    <p class="grey-text text-darken-4 flow-text">The start_url tells the browser where your application should start when it is launched, and prevents the app from starting on whatever page the user was on when they added your app to their home screen.</p>
+    <p class="grey-text text-darken-4 flow-text">Your start_url should direct the user straight into your app, rather than a product landing page. Think about the what the user will want to do once they open your app, and place them there.</p>
+    <ul class="collapsible popout">
+        <li>
+            <div class="collapsible-header light-blue lighten-5 light-blue-text text-darken-1 hoverable"> <i class="material-icons">add_circle</i>CODE:</div>
+            <div class="collapsible-body black white-text">
+                <span>
+                    <code>
+                        <pre>
+"start_url": "/?utm_source=a2hs"
+</pre>
+                    </code>
+                </span>
+            </div>
+        </li>
+    </ul>
+    <!--BACKGROUND_COLOR-->
+    <p class="flow-text likeQuote" style="font-weight: 450">background_color</p>
+    <p class="grey-text text-darken-4 flow-text">The background_color property is used on the splash screen when the application is first launched.</p>
+    <!--DISPLAY-->
+    <p class="flow-text likeQuote" style="font-weight: 450">display</p>
+    <p class="grey-text text-darken-4 flow-text">You can customize what browser UI is shown when your app is launched. For example, you can hide the address bar and browser chrome. Or games may want to go completely full screen.</p>
+    <ul class="collapsible popout">
+        <li>
+            <div class="collapsible-header light-blue lighten-5 light-blue-text text-darken-1 hoverable"> <i class="material-icons">add_circle</i>CODE:</div>
+            <div class="collapsible-body black white-text">
+                <span>
+                    <code>
+                        <pre>
+"display": "standalone"
+</pre>
+                    </code>
+                </span>
+            </div>
+        </li>
+    </ul>
+    <p class="grey-text text-darken-4 flow-text">Here are the values of display property:</p>
+    <ul class="collection">
+        <li class="collection-item">
+            <b>fullscreen:</b> Opens the web application without any browser UI and takes up the entirety of the available display area.</li>
+        <li class="collection-item">
+            <b>standalone:</b> Opens the web app to look and feel like a standalone native app. The app runs in it's own window, separate from the browser, and hides standard browser UI elements like the URL bar, etc.</li>
+        <li class="collection-item">
+            <b>minimal-ui:</b> (Not supported by Chrome) This mode is similar to fullscreen, but provides the user with some means to access a minimal set of UI elements for controlling navigation (i.e., back, forward, reload, etc).</li>
+        <li class="collection-item">
+            <b>browser:</b> A standard browser experience.</li>
+    </ul>
+    <ul class="collapsible popout">
+        <li>
+            <div class="collapsible-header light-blue lighten-5 light-blue-text text-darken-1 hoverable"> <i class="material-icons">add_circle</i>Note:</div>
+            <div class="collapsible-body">
+                <span>In order to show the Add to Home Screen Prompt, display must be set to standalone.</span>
+            </div>
+        </li>
+    </ul>
+    <!--ORIENTATION-->
+    <p class="flow-text likeQuote" style="font-weight: 450">orientation</p>
+    <p class="grey-text text-darken-4 flow-text">You can enforce a specific orientation, which is advantageous for apps that work in only one orientation, such as games. Use this selectively. Users prefer selecting the orientation.</p>
+    <ul class="collapsible popout">
+        <li>
+            <div class="collapsible-header light-blue lighten-5 light-blue-text text-darken-1 hoverable"> <i class="material-icons">add_circle</i>CODE:</div>
+            <div class="collapsible-body black white-text">
+                <span>
+                    <code>
+                        <pre>
+"orientation": "landscape"</pre>
+                    </code>
+                </span>
+            </div>
+        </li>
+    </ul>
+    <!--SCOPE-->
+    <p class="flow-text likeQuote" style="font-weight: 450">scope</p>
+    <p class="grey-text text-darken-4 flow-text">The scope defines the set of URLs that the browser considers within your app, and is used to decide when you’ve left your app, and should be bounced back out to a browser tab. The scope controls the url structure that encompasses all the entry and exit points in your web app. Your start_url must reside within the scope.</p>
+    <ul class="collapsible popout">
+        <li>
+            <div class="collapsible-header light-blue lighten-5 light-blue-text text-darken-1 hoverable"> <i class="material-icons">add_circle</i>CODE:</div>
+            <div class="collapsible-body black white-text">
+                <span>
+                    <code>
+                        <pre>
+"scope": "/maps/"</pre>
+                    </code>
+                </span>
+            </div>
+        </li>
+    </ul>
+    <ul class="collapsible popout">
+        <li>
+            <div class="collapsible-header light-blue lighten-5 light-blue-text text-darken-1 hoverable"> <i class="material-icons">add_circle</i>Few other tips:</div>
+            <div class="collapsible-body">
+                <span>If you don't include a scope in your manifest, then the default implied scope is the directory that your web app manifest is served from.</span>
+            </div>
+            <div class="collapsible-body">
+                <span>The scope attribute can be a relative path (../), or any higher level path (/) which would allow for an increase in coverage of navigations in your web app.</span>
+            </div>
+            <div class="collapsible-body">
+                <span>The start_url must be in the scope.</span>
+            </div>
+            <div class="collapsible-body">
+                <span>The start_url is relative to the path defined in the scope attribute.</span>
+            </div>
+            <div class="collapsible-body">
+                <span>A start_url starting with / will always be the root of the origin.</span>
+            </div>
+        </li>
+    </ul>
+    <!--THEME-COLOR-->
+    <p class="flow-text likeQuote" style="font-weight: 450">theme_color</p>
+    <p class="grey-text text-darken-4 flow-text">The theme_color sets the color of the tool bar, and in the task switcher.</p>
+    <ul class="collapsible popout">
+        <li>
+            <div class="collapsible-header light-blue lighten-5 light-blue-text text-darken-1 hoverable"> <i class="material-icons">add_circle</i>CODE:</div>
+            <div class="collapsible-body black white-text">
+                <span>
+                    <code>
+                        <pre>
+"theme_color": "#3367D6"</pre>
+                    </code>
+                </span>
+            </div>
+        </li>
+    </ul>
+    <ul class="collapsible popout">
+        <li>
+            <div class="collapsible-header light-blue lighten-5 light-blue-text text-darken-1 hoverable"> <i class="material-icons">add_circle</i>Note:</div>
+            <div class="collapsible-body">
+                <span>The theme_color should match the meta theme color specified in your document head.</span>
+            </div>
+        </li>
+    </ul>
+</div>
+<!--SPLASH SCREENS-->
+    <div id="splashScreens" class="section scrollspy">
+            <p class="flow-text likeQuote" style="font-weight: 500">Splash screens</p>
+            <p class="grey-text text-darken-4 flow-text">When your app first launches, it can take a moment for the browser to spin up, and the initial content to begin rendering. Instead of showing a white screen that may look to the user like the app is stall, Chrome will show a splash screen, until the first paint.</p>
+            <div class="center-align"> <img class="responsive-img lazy" src="../images/LazyLoadImages.jpg" data-src="../images/manifestImg/sscreen2.jpg" alt="Manifest splash screen Image">
+            </div>
+            <p class="grey-text text-darken-4 flow-text">Chrome will automatically create the splash screen from the manifest properties, including: name, background_color, icons</p>
+            <p class="grey-text text-darken-4 flow-text">The background_color should be the same color as the load page, to provide a smooth transition from the splash screen to your app.</p>
+            <p class="flow-text likeQuote" style="font-weight: 450">Icons used for the splash screen</p>
+            <p class="grey-text text-darken-4 flow-text">Chrome will choose the icon that closely matches the 128dp icon for that device. 128dp is the ideal size for the image on the splash screen, and means no scaling will be applied to the image.</p>
+            <p class="grey-text text-darken-4 flow-text">Again, providing a 192px and a 512px icon will be sufficient for most cases, but you can provide additional icons as necessary.</p>
+    </div>
+    </div><!--Container END-->
+    <!--FOOTER-->
+    <footer class="page-footer blue-grey darken-3 section scrollspy" id="about">
+        <div class="container">
+            <div class="col s12 m8 offset-m2 l6 offset-l3">
+                <div class="card-panel blue darken-1 hoverable">
+                    <div class="row valign-wrapper">
+                        <div class="col s2">
+                            <img src="../images/subHeaderPhoto.jpg" alt="Author photo" class="circle responsive-img"> </div>
+                        <div class="col s10">
+                            <span class="white-text"> This Progressive Web App is developed by Noman Gul, a student of the Saylani Mass Training. I hope you like this PWA So don't forget to give your feedback. </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container"> Copyright © 2018 NG Inc. All rights reserved. </div>
+        </div>
+    </footer>
+    <!--MATERIALIZE JQUERY CDN-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!--MATERIALIZE CSS CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!--CUSTOM JS-->
+    <script src="/manifest/manifest.js"></script>
+    <!--SIDENAV & SMOOTH SCROLLING INITIALIZATION-->
+    <script>
+    $(".button-collapse").sideNav();
+    $(document).ready(function (){
+        $('.scrollspy').scrollSpy();
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PWA Techniques</title>
+  <!--MATERIALIZE ICONS CDN-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--MATERIALIZE CSS CDN-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" media="screen">
+  <!--CUSTOM CSS-->
+  <link href="/src/app.css" rel="stylesheet">
+  <!--MANIFEST.JSON-->
+  <link rel="manifest" href="/manifest.json">
+  <!--FAVICON-->
+  <link rel="shortcut icon" href="/images/icons/favicon.ico" type="image/x-icon">
+  <!--INITIALIZATION FOR IOS DEVICES-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Service Worker CookBook">
+  <link rel="apple-touch-icon" href="/images/icons/29.png" sizes="29x29">
+  <link rel="apple-touch-icon" href="/images/icons/40.png" sizes="40x40">
+  <link rel="apple-touch-icon" href="/images/icons/58.png" sizes="58x58">
+  <link rel="apple-touch-icon" href="/images/icons/72.png" sizes="72x72">
+  <link rel="apple-touch-icon" href="/images/icons/76.png" sizes="76x76">
+  <link rel="apple-touch-icon" href="/images/icons/80.png" sizes="80x80">
+  <link rel="apple-touch-icon" href="/images/icons/87.png" sizes="87x87">
+  <link rel="apple-touch-icon" href="/images/icons/96.png" sizes="96x96">
+  <link rel="apple-touch-icon" href="/images/icons/120.png" sizes="120x120">
+  <link rel="apple-touch-icon" href="/images/icons/128.png" sizes="128x128">
+  <link rel="apple-touch-icon" href="/images/icons/144.png" sizes="144x144">
+  <link rel="apple-touch-icon" href="/images/icons/152.png" sizes="152x152">
+  <link rel="apple-touch-icon" href="/images/icons/152.png" sizes="167x167">
+  <link rel="apple-touch-icon" href="/images/icons/152.png" sizes="180x180">
+  <link rel="apple-touch-icon" href="/images/icons/192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/images/icons/256.png" sizes="256x256">
+  <link rel="apple-touch-icon" href="/images/icons/512.png" sizes="512x512">
+  <!--INITIALIZATION FOR WINDOWS PHONES-->
+  <meta name="msapplication-TileImage" content="/images/icons/144.png">
+  <meta name="msapplication-TileColor" content="#00f">
+  <!--THEME-COLOR-->
+  <meta name="theme-color" content="#1e88e5">
+</head>
+
+<body class="grey lighten-5">
+  <!--NAVBAR-->
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper blue darken-1">
+        <a href="#" class="brand-logo hide-on-med-and-up" style="font-size: 4vmin">PWA Techniques</a>
+        <a href="#" class="brand-logo hide-on-small-only center" style="font-size: 4vmin">PWA Techniques</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse">
+          <i class="material-icons">menu</i>
+        </a>
+        <!--SIDE NAV-->
+        <ul class="side-nav" id="mobile-demo">
+          <li>
+            <a href="/swcb/swcb.html" class="btn-flat">
+            <i class="material-icons left">settings_applications</i>Service Worker</a>
+          </li>
+          <li>
+            <a href="/manifest/manifest.html" class="btn-flat">
+            <i class="material-icons left">fiber_manual_record</i>Manifest</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <!--MAIN CONTAINER-->
+  <div class="container white">
+      <!--A2HS CUSTOM PROMPT BUTTON-->
+    <div class="fixed-action-btn" id="a2hsBtn" title="Add to Home Screen">
+      <a class="btn-floating btn-large waves-effect REDbtn z-depth-5">
+        <i class="large material-icons">add_to_home_screen</i>
+      </a>
+    </div>
+    <!--AUTHOR INTRODUCTION-->
+    <div class="col s12 m8 offset-m2 l6 offset-l3">
+      <div class="card-panel blue darken-1 hoverable">
+        <div class="row valign-wrapper">
+          <div class="col s2">
+            <img src="/images/subHeaderPhoto.jpg" alt="Author Photo" class="circle responsive-img"> </div>
+          <div class="col s10">
+            <span class="white-text"> This Progressive Web App is developed by Noman Gul, a student of the Saylani Mass Training. I hope you like this PWA So don't forget to give your feedback. </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--SW COOKBOOK CARD-->
+    <a href="/swcb/swcb.html">
+      <div class="row">
+        <div class="col s12 m12">
+          <div class="card z-depth-5">
+            <div class="card-image">
+              <img src="/images/pwaTechniques/sw2.jpeg">
+            </div>
+            <div class="card-content">
+              <p class="grey-text text-darken-4 flow-text">Rich offline experiences, periodic background syncs, push notifications functionality that would normally require a native application are coming to the web. Service workers provide the technical foundation that all these features rely on.</p>
+            </div>
+            <div class="card-action right-align hide-on-small-only">
+              <a href="/swcb/swcb.html" class="btn waves-effect REDbtn">Show More</a>
+            </div>
+            <div class="card-action center-align hide-on-med-and-up">
+              <a href="/swcb/swcb.html" class="btn waves-effect REDbtn">Show More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+    <!--MANIFEST COOKBOOK CARD-->
+    <a href="/manifest/manifest.html">
+      <div class="row">
+        <div class="col s12 m12">
+          <div class="card z-depth-5">
+            <div class="card-image">
+              <img src="/images/LazyLoadImages.jpg" data-src="/images/pwaTechniques/manijson2.jpg" class="lazy">
+            </div>
+            <div class="card-content">
+              <p class="grey-text text-darken-4 flow-text">The web app manifest is a simple JSON file that tells the browser about your web application and how it should behave when 'installed' on the users mobile device or desktop. Having a manifest is required by Chrome to show the Add to Home Screen prompt.</p>
+            </div>
+            <div class="card-action right-align hide-on-small-only">
+              <a href="/manifest/manifest.html" class="btn waves-effect REDbtn">Show More</a>
+            </div>
+            <div class="card-action center-align hide-on-med-and-up">
+              <a href="/manifest/manifest.html" class="btn waves-effect REDbtn">Show More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <!--CONTAINER END-->
+  <!--FOOTER-->
+  <footer class="page-footer blue-grey darken-3">
+    <div class="footer-copyright">
+      <div class="container"> Copyright © 2018 NG Inc. All rights reserved.</div>
+    </div>
+  </footer>
+  <!--INITIALIZE FIREBASE-->
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+  <script>
+    var config = {
+      apiKey: "AIzaSyDWdD2lzCcb4JYDO8i_Ift4VnIeEmlXORE",
+      authDomain: "pwa-techniques.firebaseapp.com",
+      databaseURL: "https://pwa-techniques.firebaseio.com",
+      projectId: "pwa-techniques",
+      storageBucket: "pwa-techniques.appspot.com",
+      messagingSenderId: "917989273201"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <!--MATERIALIZE JQUERY-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <!--MATERIALIZE JS-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <!--CUSTOM JS-->
+  <script src="/src/app.js"></script>
+  <!--INITIALIZING FOR SIDENAV-->
+  <script>$(".button-collapse").sideNav();</script>
+</body>
+</html>
