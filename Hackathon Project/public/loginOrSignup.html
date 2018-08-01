@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PakOLX-Login-Signup</title>
+  <!--Import Google Icon Font-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css" media="screen,projection" />
+  <!--CUSTOM CSS-->
+  
+</head>
+
+<body>
+    <nav>
+      <div class="nav-wrapper green darken-1">
+        <a href="#!" class="brand-logo center">PakOLX</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <a href="/index.html">
+              <button class="btn">Go Back</button>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  <ul class="sidenav" id="mobile-demo">
+    <li>
+      <a href="/index.html">Go Back
+      </a>
+    </li>
+  </ul>
+  <div class="container">
+    <div class="card-panel z-depth-5" style="margin-top: 10%">
+      <h2 class="flow-text center" style="margin-top: -5px">LogIn or Signup</h2>
+      <div class="divider"></div>
+      <div class="row" style="margin-top: 5%">
+        <div class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">email</i>
+              <input id="txtEmail" type="email" class="validate" required>
+              <label for="txtEmail">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">security</i>
+              <input id="txtPassword" type="password" class="validate" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+              <span class="helper-text" data-error="Password must be 8 characters long & include at least one Uppercase letter & one number"></span>
+              <label for="txtPassword">Password</label>
+            </div>
+          </div>
+          <div class="right">
+            <button id="btnLogin" class="btn-large waves-effect waves-light green darken-1 z-depth-3" onclick="">Login</button>
+            <button id="btnSignup" class="btn-large waves-effect waves-light green darken-1 z-depth-3">Signup</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+  <script src="/src/loginOrSignup/app.js"></script>
+      
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+  <script>
+    //NAVBAR INITIALIZATION
+    $(document).ready( () => {
+      $('.sidenav').sidenav();
+    });
+  </script>
+  
+</body>
+
+</html>

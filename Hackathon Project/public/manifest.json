@@ -1,0 +1,55 @@
+{
+    "name": "",
+    "short_name": "",
+    "theme_color": "",
+    "background_color": "",
+    "orientation": "",
+    "scope": ".",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "lang": "en-US",
+    "dir": "ltr",
+    "icons": [
+        {
+            "src": "",
+            "sizes": "",
+            "type": ""
+        },
+        {
+            "src": "",
+            "sizes": "",
+            "type": ""
+        },
+        {
+            "src": "",
+            "sizes": "",
+            "type": ""
+        },
+        {
+            "src": "",
+            "sizes": "",
+            "type": ""
+        },
+        {
+            "src": "",
+            "sizes": "",
+            "type": ""
+        },
+        {
+            "src": "",
+            "sizes": "",
+            "type": ""
+        },
+        {
+            "src": "",
+            "sizes": "",
+            "type": ""
+        },
+        {
+            "src": "",
+            "sizes": "",
+            "type": ""
+        }
+    ],
+    "description": ""
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>OLX PAKISTAN</title>
+  <!--Import Google Icon Font-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css" media="screen,projection" />
+  <!--CUSTOM CSS-->
+  <link rel="stylesheet" href="/src/main/style.css">
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper green darken-1">
+      <a href="#!" class="brand-logo center">PakOLX</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+            <a href="/loginOrSignup.html" class="waves-effect waves-light btn">
+              <i class="material-icons left">send</i>Login-Signup
+            </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <ul class="sidenav" id="mobile-demo">
+    <li>
+      <a href="/loginOrSignup.html">
+        <button class="btn"><i class="material-icons left">person_pin</i>login-Signup Here</button>
+      </a>
+    </li>
+  </ul>
+
+
+  <!-- Initialize Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+  <script>
+    var config = {
+    apiKey: "AIzaSyCek1I7W14it5lYjOxhQI_EctNpdFsOExQ",
+    authDomain: "pakolx-41f1c.firebaseapp.com",
+    databaseURL: "https://pakolx-41f1c.firebaseio.com",
+    projectId: "pakolx-41f1c",
+    storageBucket: "pakolx-41f1c.appspot.com",
+    messagingSenderId: "329604896905"
+  };
+  firebase.initializeApp(config);  
+  </script>
+
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+  <script>
+    //NAVBAR INITIALIZATION
+    $(document).ready(function () {
+      $('.sidenav').sidenav();
+    });
+  </script>
+  <!-- CUSTOM JS -->
+  <script src="/src/main/app.js"></script>
+</body>
+
+</html>
