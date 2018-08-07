@@ -1,0 +1,20 @@
+{
+  "name": "Noman Gul",
+  "short_name": "Noman Gul",
+  "theme_color": "#534dae",
+  "background_color": "#534dae",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "Scope": ".",
+  "start_url": "/index.html",
+  "dir": "ltr",
+  "lang": "en-US",
+  "description": "A Simple PWA Portfolio, implementing a lot of PWA love.",
+  "icons": [
+    {
+      "src": "/assets/img/imgMan1.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
